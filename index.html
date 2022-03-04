@@ -13,11 +13,20 @@
    <div class="container">
 
       <div class="gradient">
-         <p gradient-container color="white; black; white" amp="50">Ceci est mon texte souligné</p>
+         <p gradient-container color="white; black; white" amp="20">New plugin : Hover Over</p>
       </div>
 
       <div class="tools">
-         <p id="background-text"></p>
+         <div class="radio">
+            <label for="choice2">
+               2 colors
+               <input type="radio" name="nb-colors" id="choice2">
+            </label>
+            <label for="choice3">
+               3 colors
+               <input type="radio" name="nb-colors" id="choice3">
+            </label>
+         </div>
          <label for="color1">
             Color 1 :
             <input type="color" name="color1" id="color1" value="#FFFFFF">
@@ -26,13 +35,14 @@
             Color 2 :
             <input type="color" name="color2" id="color2" value="#000000">
          </label>
-         <label for="color3">
+         <label for="color3" id="third">
             Color 3 :
             <input type="color" name="color3" id="color3" value="#FFFFFF">
          </label>
          <label for="amplifier">
             Amplifier : 
-            <input type="range" min="0" max="100" value="20" name="amplifier" id="amplifier">
+            <input type="range" min="0" value="20" max="100" name="amplifier" id="amplifier">
+            <p id="value"></p>
          </label>
       </div>
 
@@ -43,5 +53,6 @@
    
 
    <script src="./assets/js/index.js"></script>
+   <script src="page.js"></script>
 </body>
 </html>
