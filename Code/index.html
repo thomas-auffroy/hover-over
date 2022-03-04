@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="stylePlugin.css">
+   <title>Document</title>
+</head>
+<body>
+ 
+   <div class="container">
+
+      <div class="gradient">
+         <p gradient-container color="white; black; white" amp="50">Ceci est mon texte souligné</p>
+      </div>
+
+      <div class="tools">
+         <p id="background-text"></p>
+         <label for="color1">
+            Color 1 :
+            <input type="color" name="color1" id="color1">
+         </label>
+         <label for="color2">
+            Color 2 :
+            <input type="color" name="color2" id="color2">
+         </label>
+         <label for="color3">
+            Color 3 :
+            <input type="color" name="color3" id="color3">
+         </label>
+         <label for="amplifier">
+            Amplifier : 
+            <input type="range" min="0" max="100" value="20" name="amplifier" id="amplifier">
+         </label>
+      </div>
+
+
+
+   </div>
+
+   
+
+   <script src="index.js"></script>
+</body>
+</html>

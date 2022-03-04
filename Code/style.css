@@ -1,0 +1,52 @@
+*, ::after, ::before{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	height: 100vh;
+}
+
+.container{
+	max-width: 1300px;
+	margin: 0 auto;
+	
+	height: 100%;
+	
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.gradient{
+	border: 1px solid black;
+	border-radius: 15px; 
+	height: 70%;
+	width: 55%;
+	display: flex;
+	align-items: center;
+	
+	padding: 25px;
+}
+
+
+
+.gradient p{
+	font-size: 2em;
+}
+
+
+.tools{
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+}
+
+label{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+

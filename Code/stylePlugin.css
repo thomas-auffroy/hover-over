@@ -1,0 +1,12 @@
+[gradient-container]{
+	position: relative;
+}
+
+div[gradient]{
+	z-index: -1;
+	position: absolute;
+	bottom: -0.1em;
+	height: 0.12em;
+	width: 100%;
+	border-radius: 50%;
+}
