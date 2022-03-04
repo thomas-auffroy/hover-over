@@ -1,6 +1,6 @@
 const re = /\s*(?:;|$)\s*/
 
-let containers = [];
+var containers = [];
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -25,7 +25,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	containers.forEach(el => {
 		if (el.colors.length == 3){
 			el.child.style = `background : linear-gradient(to right, ${el.colors[0]}, ${el.colors[1]}, ${el.colors[2]})`;
-			document.getElementById("background-text").innerText = `background : linear-gradient(to right, ${el.colors[0]}, ${el.colors[1]}, ${el.colors[2]})`;
 		} else {
 			el.child.style = `background : linear-gradient(to right, ${el.colors[0]}, ${el.colors[1]}`;
 		}
@@ -40,7 +39,6 @@ window.addEventListener("mousemove", arg => {
 
 		if (el.colors.length == 3){
 			el.child.style = `background : linear-gradient(to right, ${el.colors[0]} ${el.percentage - el.amplifier}%, ${el.colors[1]}, ${el.colors[2]} ${el.percentage + el.amplifier}%)`;
-			document.getElementById("background-text").innerText = `background : linear-gradient(to right, ${el.colors[0]} ${el.percentage - el.amplifier}%, ${el.colors[1]}, ${el.colors[2]} ${el.percentage + el.amplifier}%)`;
 		} else {
 			el.child.style = `background : linear-gradient(to right, ${el.colors[0]} ${el.percentage - el.amplifier}%, ${el.colors[1]} ${el.percentage + el.amplifier}%)`;
 		}
@@ -53,13 +51,3 @@ window.addEventListener("resize", () => {
 		el.width = el.self.getBoundingClientRect().width;
 	})
 })
-
-document.querySelectorAll("input").forEach(el => {
-	el.addEventListener("change", arg => {
-	
-		console.log(arg);
-	
-	})
-
-})
-
