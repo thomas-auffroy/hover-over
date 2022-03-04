@@ -1,64 +1,65 @@
 const re = /\s*(?:;|$)\s*/
 
-const gradContainers = document.querySelectorAll("[gradient-container]");
-let colors = [];
-let amplifiers = [];
-var gradXs = [];
-var gradWidths = [];
-gradContainers.forEach(el => {
-	colors.push(el.getAttribute("color").split(re));
-	amplifiers.push(parseInt(el.getAttribute("amp")));
-	gradXs.push(el.getBoundingClientRect().x);
-	gradWidths.push(el.getBoundingClientRect().width);
-})
-var grads = [];
+let containers = [];
 
 window.addEventListener("DOMContentLoaded", () => {
+
+	document.querySelectorAll("[gradient-container]").forEach(el => {
+		let obj = {};
+		obj["self"] = el;
+		obj["colors"] = el.getAttribute("color").split(re);
+		obj["amplifier"] = parseInt(el.getAttribute("amp"));
+		obj["x"] = el.getBoundingClientRect().x;
+		obj["width"] = el.getBoundingClientRect().width;
+		obj["percentage"] = 0;
 	
-	gradContainers.forEach(el => {
 		let div = document.createElement("div");
 		div.setAttribute("gradient","");
 		el.appendChild(div);
+
+		obj["child"] = div;
+
+		containers.push(obj);
 	})
-
-	grads = document.querySelectorAll("[gradient]");
-
-	for (i = 0; i<grads.length; i++){
-		if (colors[i].length == 3){
-			grads[i].style = `background : linear-gradient(to right, ${colors[i][0]}, ${colors[i][1]}, ${colors[i][2]})`;
-			document.getElementById("background-text").innerText = `background : linear-gradient(to right, ${colors[i][0]} ,${colors[i][1]}, ${colors[i][2]})`;
+	
+	containers.forEach(el => {
+		if (el.colors.length == 3){
+			el.child.style = `background : linear-gradient(to right, ${el.colors[0]}, ${el.colors[1]}, ${el.colors[2]})`;
+			document.getElementById("background-text").innerText = `background : linear-gradient(to right, ${el.colors[0]}, ${el.colors[1]}, ${el.colors[2]})`;
 		} else {
-			grads[i].style = `background : linear-gradient(to right, ${colors[i][0]}, ${colors[i][1]})`;
+			el.child.style = `background : linear-gradient(to right, ${el.colors[0]}, ${el.colors[1]}`;
 		}
-	}
-
+	})
 })
 
 window.addEventListener("mousemove", arg => {
 	let mouseX = arg.clientX;
-	let percentages = [];
 
-	for (i = 0; i < gradContainers.length ; i++){
-		percentages.push(100 * (mouseX - gradXs[i]) / gradWidths[i]);
-	}
+	containers.forEach(el => {
+		el.percentage = 100 * (mouseX - el.x) / el.width;
 
-	for (i = 0; i<grads.length; i++){
-		if (colors[i].length == 3){
-			grads[i].style = `background : linear-gradient(to right, ${colors[i][0]} ${percentages[i] - amplifiers[i]}%,${colors[i][1]}, ${colors[i][2]} ${percentages[i] + amplifiers[i]}%)`;
-			document.getElementById("background-text").innerText = `background : linear-gradient(to right, ${colors[i][0]} ${Math.trunc(percentages[i]) - amplifiers[i]}%,${colors[i][1]}, ${colors[i][2]} ${Math.trunc(percentages[i]) + amplifiers[i]}%)`;
+		if (el.colors.length == 3){
+			el.child.style = `background : linear-gradient(to right, ${el.colors[0]} ${el.percentage - el.amplifier}%, ${el.colors[1]}, ${el.colors[2]} ${el.percentage + el.amplifier}%)`;
+			document.getElementById("background-text").innerText = `background : linear-gradient(to right, ${el.colors[0]} ${el.percentage - el.amplifier}%, ${el.colors[1]}, ${el.colors[2]} ${el.percentage + el.amplifier}%)`;
 		} else {
-			grads[i].style = `background : linear-gradient(to right, ${colors[i][0]} ${percentages[i] - amplifiers[i]}%, ${colors[i][1]} ${percentages[i] + amplifiers[i]}%)`;
+			el.child.style = `background : linear-gradient(to right, ${el.colors[0]} ${el.percentage - el.amplifier}%, ${el.colors[1]} ${el.percentage + el.amplifier}%)`;
 		}
-	}
-})
-
-window.addEventListener("resize", () => {
-	gradXs = [];
-	gradWidths = [];
-	gradContainers.forEach(el => {
-		gradXs.push(el.getBoundingClientRect().x);
-		gradWidths.push(el.getBoundingClientRect().width);
 	})
 })
 
+window.addEventListener("resize", () => {
+	containers.forEach(el => {
+		el.x = el.self.getBoundingClientRect().x;
+		el.width = el.self.getBoundingClientRect().width;
+	})
+})
+
+document.querySelectorAll("input").forEach(el => {
+	el.addEventListener("change", arg => {
+	
+		console.log(arg);
+	
+	})
+
+})
 
