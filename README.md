@@ -1,3 +1,5 @@
+<h1>Hover Over</h1>
+
 ## Installation
 
 Download the file called index.js in assets/js and put it in your HTML file.
