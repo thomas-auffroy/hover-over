@@ -37,6 +37,12 @@ _Get the [JS file](https://github.com/thomas-auffroy/hover-over/blob/main/assets
 ```html
 <div gradient-container color="white, black, white" amp=20></div>
 ```
+
+| Parameters          | Type     | Default | Description                                                                    |
+| ------------------- | -------- | ------- | ------------------------------------------------------------------------------ |
+| `gradient-container`|          |         | Container element.                                                             |
+| `color`             | `string` |         | Accept 2 or 3 colors separated by `;`. Could be string, hex, hsln rgb, rgba... |
+| `amp`               | `number` |         | How the transition is spread.                                                  |
 `gradient-container` Container element.
 `color` Accept 2 or 3 colors separated by `;`. Could be string, hex, hsln rgb, rgba...
 `amp` How the transition is spread.
