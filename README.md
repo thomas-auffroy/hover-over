@@ -18,5 +18,7 @@ _Get the [JS file](https://github.com/thomas-auffroy/hover-over/blob/main/assets
 | `color`              | `string` |         | Accept 2 or 3 colors separated by `;`. Could be string, hex, hsln rgb, rgba... |
 | `amp`                | `number` |         | How the transition is spread.                                                  |
 
+## Live test
 
+https://thomas-auffroy.github.io/hover-over/
 
