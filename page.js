@@ -1,9 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
 
 	if (document.getElementById("choice2").checked){
-		document.getElementById('third').style = "display: none";
+		document.getElementById('third').style = "visibility: hidden";
 	} else {
-		document.getElementById('third').style = "display: flex";		
+		document.getElementById('third').style = "visibility: visible";		
 	}
 	
 	var color1 = document.getElementById("color1");
@@ -29,11 +29,11 @@ color3.addEventListener("change", arg => {
 })
 
 document.getElementById("choice2").addEventListener("change", () => {
-	document.getElementById('third').style = "display: none";
+	document.getElementById('third').style = "visibility: hidden";
 	containers[0].colors.pop();
 })
 document.getElementById("choice3").addEventListener("change", () => {
-	document.getElementById('third').style = "display: flex";
+	document.getElementById('third').style = "visibility: visible";
 	containers[0].colors.push(color3.value);
 })
 
