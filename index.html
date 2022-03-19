@@ -6,45 +6,60 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./assets/css/style.css">
    <link rel="stylesheet" href="./assets/css/stylePlugin.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet"> 
    <title>Hover Over</title>
 </head>
 <body>
  
    <div class="container">
 
-      <div class="gradient">
-         <p gradient-container color="white; black; white" amp="20">New plugin : Hover Over</p>
+      <div id="left">
+         <div class="gradient">
+            <p gradient-container color="white; black; white" amp="20">New plugin : Hover Over</p>
+         </div>
+   
+         <div class="tools">
+            <label for="amplifier">
+               Amplifier
+               <input type="range" min="0" value="20" max="100" name="amplifier" id="amplifier">
+               <p id="value"></p>
+            </label>
+            <div class="radio">
+               <label for="choice2">
+                  2 colors
+                  <input type="radio" name="nb-colors" id="choice2">
+               </label>
+               <label for="choice3">
+                  3 colors
+                  <input type="radio" name="nb-colors" id="choice3" checked>
+               </label>
+            </div>
+
+            <label for="color1">
+               Left color 
+               <input type="color" name="color1" id="color1" value="#f5f5dc">
+            </label>
+            <label for="color2">
+               Middle color
+               <input type="color" name="color2" id="color2" value="#000000">
+            </label>
+            <label for="color3" id="third">
+               Right color
+               <input type="color" name="color3" id="color3" value="#f5f5dc">
+            </label>
+
+         </div>
       </div>
 
-      <div class="tools">
-         <div class="radio">
-            <label for="choice2">
-               2 colors
-               <input type="radio" name="nb-colors" id="choice2">
-            </label>
-            <label for="choice3">
-               3 colors
-               <input type="radio" name="nb-colors" id="choice3">
-            </label>
+      <div id="right">
+         <div class="download">
+            <a href="./assets/js/index.js">Download the Js file</a>
          </div>
-         <label for="color1">
-            Color 1 :
-            <input type="color" name="color1" id="color1" value="#FFFFFF">
-         </label>
-         <label for="color2">
-            Color 2 :
-            <input type="color" name="color2" id="color2" value="#000000">
-         </label>
-         <label for="color3" id="third">
-            Color 3 :
-            <input type="color" name="color3" id="color3" value="#FFFFFF">
-         </label>
-         <label for="amplifier">
-            Amplifier : 
-            <input type="range" min="0" value="20" max="100" name="amplifier" id="amplifier">
-            <p id="value"></p>
-         </label>
       </div>
+
 
 
 
