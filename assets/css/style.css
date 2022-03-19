@@ -6,6 +6,8 @@
 
 body{
 	height: 100vh;
+	background-color: #f5f5dc;
+	font-family: 'Mukta', sans-serif;
 }
 
 .container{
@@ -15,13 +17,20 @@ body{
 	height: 100%;
 	
 	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#left{
+	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
+	
+	height: 600px;
 }
 
 .gradient{
-	height: 70%;
-	width: 55%;
 	display: flex;
 	align-items: center;
 	
@@ -29,18 +38,34 @@ body{
 	justify-content: center;
 }
 
+input[type="radio"]{
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	height: 20px;
+	width: 20px;
+
+	border-radius: 5px;
+	border: 1px solid;
+}
+input[type="radio"]:checked{
+	background-color: #30FC5B;
+}
 
 
 .gradient p{
-	/* border: 1px solid; */
 	font-size: 3em;
+}
+
+#value{
+	width: 1em;
 }
 
 
 .tools{
 	display: flex;
 	flex-direction: column;
-	width: 20%;
+	width: 300px;
 }
 
 label{
