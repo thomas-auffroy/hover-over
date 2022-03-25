@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
 		obj["width"] = el.getBoundingClientRect().width;
 		obj["percentage"] = 0;
 	
-		let div = document.createElement("div");
+		let div = document.createElement("gradientContent");
 		div.setAttribute("gradient","");
 		el.appendChild(div);
 
