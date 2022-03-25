@@ -2,11 +2,14 @@
 	position: relative;
 }
 
-div[gradient]{
+gradientContent[gradient]{
 	z-index: -1;
 	position: absolute;
 	bottom: -0.1em;
 	height: 0.12em;
 	width: 100%;
+
+	display: block;
+
 	border-radius: 50%;
 }
