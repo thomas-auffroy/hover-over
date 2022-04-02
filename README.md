@@ -2,8 +2,11 @@
 
 ## Installation
 
-Download the file called index.js in assets/js and put it in your HTML file.
-_Get the [JS file](https://github.com/thomas-auffroy/hover-over/blob/main/assets/js/index.js)._
+Download the file called index.js and put it in your HTML file.
+_Get the [JS file](https://github.com/thomas-auffroy/hover-over/blob/main/assets/js/HoverOver.js)._
+
+Download the file called styleHoverOver.css and put it in your HTML file.
+_Get the [CSS file](https://github.com/thomas-auffroy/hover-over/blob/main/assets/css/styleHoverOver.css)._
 
 ## Usage
 
